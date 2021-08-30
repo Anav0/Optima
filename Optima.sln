@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optima", "Optima\Optima.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optima.Tests", "Optima.Tests\Optima.Tests.csproj", "{AAC57FA7-D8B5-4407-8D3E-E360989C4D8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optima.Examples", "Optima.Examples\Optima.Examples.csproj", "{DACE2336-797A-4602-939C-B98452D58DA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{AAC57FA7-D8B5-4407-8D3E-E360989C4D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC57FA7-D8B5-4407-8D3E-E360989C4D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC57FA7-D8B5-4407-8D3E-E360989C4D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACE2336-797A-4602-939C-B98452D58DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACE2336-797A-4602-939C-B98452D58DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACE2336-797A-4602-939C-B98452D58DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACE2336-797A-4602-939C-B98452D58DA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
