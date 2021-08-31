@@ -13,7 +13,7 @@ namespace Optima.Examples.KnapsackProblem
 
         public override double Penalty(KnapsackSolution solution)
         {
-            var totalWeight = 0;
+            var totalWeight = 0d;
             for (int i = 0; i < solution.PickedItems.Length; i++)
             {
                 if (!solution.PickedItems[i]) continue;

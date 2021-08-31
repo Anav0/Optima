@@ -13,7 +13,7 @@ namespace Optima.Examples.KnapsackProblem
 
         public override double CalculateValue(KnapsackSolution solution)
         {
-            var totalValue = 0;
+            var totalValue = 0d;
 
             for (int i = 0; i < solution.PickedItems.Length; i++)
             {

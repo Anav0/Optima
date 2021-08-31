@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Title>Optima</Title>
+    <Authors>Igor Motyka</Authors>
+    <RepositoryUrl>https://github.com/Anav0/Optima</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/Anav0/Optima/blob/main/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
