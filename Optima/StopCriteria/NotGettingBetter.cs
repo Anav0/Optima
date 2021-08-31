@@ -55,7 +55,7 @@ namespace Optima.StopCriteria
 
         public override string ToString()
         {
-            return $"({nameof(NotGettingBetter<T>)}): max iterations with not improvement = {_notGettingBetterDuration}";
+            return $"{nameof(NotGettingBetter<T>)}\n\tMax iterations with not improvement = {_notGettingBetterDuration.ToString("N")}\n\tMax steps = {_maxSteps.ToString("N")}";
         }
     }
 }

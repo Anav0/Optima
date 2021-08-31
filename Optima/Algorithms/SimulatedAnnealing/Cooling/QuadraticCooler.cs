@@ -13,5 +13,10 @@ namespace Optima.Algorithms.SimulatedAnnealing
         {
             return Temperature *= _multiplier;
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(QuadraticCooler)}\n\tCool by: {_multiplier}\n\tInitial temperature: {Temperature}";
+        }
     }
 }

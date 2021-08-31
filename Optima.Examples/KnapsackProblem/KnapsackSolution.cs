@@ -1,5 +1,4 @@
-﻿using System;
-using Optima.Base;
+﻿using Optima.Base;
 
 namespace Optima.Examples.KnapsackProblem
 {
@@ -10,6 +9,13 @@ namespace Optima.Examples.KnapsackProblem
         public KnapsackSolution(bool[] pickedItems)
         {
             PickedItems = pickedItems;
+        }
+
+        public KnapsackSolution(KnapsackInstance instance)
+        {
+            PickedItems = new bool[instance.V.Length];
+            for (int i = 0; i < instance.V.Length; i++)
+                PickedItems[i] = true;
         }
 
         protected override void CopyTo(Solution solution)
@@ -40,9 +46,14 @@ namespace Optima.Examples.KnapsackProblem
 
         public override string ToString()
         {
-            var str = $"PickedItems: [{PickedItems[0]}";
+            var b = PickedItems[0] ? 1 : 0;
+            var str = $"Value: {CalculatedValue}\nPickedItems: [{b}";
             for (int i = 1; i < PickedItems.Length; i++)
-                str += $",{PickedItems[i]}";
+            {
+                b = PickedItems[i] ? 1 : 0;
+                str += $",{b}";
+            }
+
             str += "]";
             return str;
         }
