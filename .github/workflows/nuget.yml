@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Publish nuget
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+  push:
+    tags:
+    - "v*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Build
+      run: dotnet build --configuration Release /p:Version=${VERSION} Optima
+    - name: Test
+      run: dotnet test --no-restore Optima
+    - name: Setup .Net Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0'
+        source-url: "https://nuget.pkg.github.com/Anav0/index.json"
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Pack
+      run: dotnet pack -c Release -o . Optima
+    - name: Publish
+      run: dotnet nuget push ./*.nupkg --no-symbols true --api-key ${{secrets.GITHUB_TOKEN}}
